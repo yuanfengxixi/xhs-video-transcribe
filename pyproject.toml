@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xhs-video-transcribe"
+version = "0.1.0"
+description = "Create plain-text transcripts and SRT subtitles from local video or audio files."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "Yuanfeng Xixi" }]
+dependencies = ["faster-whisper>=1.1,<2"]
+classifiers = [
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+
+[project.scripts]
+xhs-video-transcribe = "xhs_video_transcribe.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
